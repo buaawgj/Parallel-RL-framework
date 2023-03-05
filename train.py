@@ -22,7 +22,6 @@ def main():
     # 处理输入参数（游戏名称）
     parser = argparse.ArgumentParser(description='Some settings of the experiment.')
     parser.add_argument('--game', type=str, nargs=1, 
-                        default='Pendulum', 
                         help='name of the games. for example: Breakout'
                         )
     args = parser.parse_args()
