@@ -1,3 +1,5 @@
+# This code is mainly adapted from Kuch's codes.
+# https://github.com/Kchu/DeepRL_PyTorch
 import numpy as np
 from abc import ABC, abstractmethod
 from multiprocessing import Process, Pipe
