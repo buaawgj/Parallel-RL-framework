@@ -5,7 +5,7 @@ The codes for DQN are adapted from [Kchu](<https://github.com/Kchu/DeepRL_PyTorc
 
 The codes for the classical control game Pendulum are excerpted from OpenAI baseline Gym, and an new image data output API is added to this game by defining a new observation wrapper in wrappers.py.
 
-The default number of parallel threads is set to 1 because the percentage of the sampling period in all traning time is very small. In other words, the sampling costs very little time, and the optimization space is very narrow by employing parallel coding technique.
+The default number of parallel threads is set to 1 because the percentage of the sampling period in all traning time is very small. In other words, the sampling costs very little time, and the optimization space is very narrow through employing parallel coding technique.
 
 Always up for a chat -- shoot me an email (wgj@buaa.edu.cn) if you'd like to discuss anything.
 
