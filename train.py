@@ -15,7 +15,6 @@ import dqn
 from dqn import DQN
 from wrappers import wrap, wrap_cover, wrap_cover_pendulun
 from parallel import SubprocVecEnv
-from pendulum import PendulumEnv
 
 
 def main():
