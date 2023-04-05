@@ -1,6 +1,6 @@
-# DQN
+# Parallel RL framework
 
-Parallel DQN for an Inverted Pendulum with Image Data implemented in PyTorch and OpenAI Gym
+A simple parallel RL framework implemented in PyTorch and OpenAI Gym for an Inverted Pendulum with Image Data
 
 The default number of parallel threads is set to 1 because the percentage of the sampling period in all traning time is very small. In other words, the sampling costs very little time, and hence the optimization space is very narrow even by employing parallel coding technique.
 
