@@ -2,7 +2,9 @@
 
 A simple parallel RL framework implemented in PyTorch and OpenAI Gym for an Inverted Pendulum with image data
 
-The default number of parallel threads is set to 1 because the percentage of the sampling period in all traning time is very small. In other words, the sampling costs very little time, and hence the optimization space is very narrow even by employing parallel coding technique.
+The default number of parallel threads is set to 1 because the percentage of the sampling period in all traning time is very small. 
+
+In other words, the sampling costs very little time, and hence the optimization space is very narrow even by employing parallel coding technique.
 
 Always up for a chat -- shoot me an email (wgj@buaa.edu.cn) if you'd like to discuss anything.
 
