@@ -1,4 +1,4 @@
-# Parallel RL framework
+# Simple Parallel RL Framework
 
 A simple parallel RL framework implemented in PyTorch and OpenAI Gym for an Inverted Pendulum with image data
 
