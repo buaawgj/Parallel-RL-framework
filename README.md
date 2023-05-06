@@ -25,10 +25,10 @@ pip3 install pytorch pygame gym opencv_python
 
 ## How to use
 
-Enter the DQN directory, and run the python3 command 'python3 train.py':
+Enter the DQN directory, and run the python3 command 'python3 train.py --algo ddpg(dqn)':
 ```
 cd DQN-pytorch # 
-python3 train.py
+python3 train.py --algo ddpg(dqn)
 ```
 
 When testing the bulit environment, you could let the code idle with the following command:
