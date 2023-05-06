@@ -43,4 +43,5 @@ After training, you can plot the results by running result_show.py with appropri
 
 ## References:
 
-1. Human-level control through deep reinforcement learning (DQN)   [[Paper](https://www.nature.com/articles/nature14236)]   [[Code](https://github.com/buaawgj/DQN-pytorch/dqn.py)]
+1. Human-level control through deep reinforcement learning (DQN)   [[Paper](https://www.nature.com/articles/nature14236)]
+2. Continuous control with deep reinforcement learning (DDPG) [[Paper](https://arxiv.org/pdf/1509.02971.pdf)]
