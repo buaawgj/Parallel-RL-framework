@@ -162,7 +162,8 @@ def main():
             # log arrange
             for info in infos:
                 maybeepinfo = info.get('episode')
-                if maybeepinfo: epinfobuf.append(maybeepinfo)
+                if maybeepinfo: 
+                    epinfobuf.append(maybeepinfo)
             s_ = env.reset()
 
         # store the transition
