@@ -8,7 +8,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 
-from .replay_memory import ReplayBufferImage
+from buffers.replay_memory import ReplayBufferImage
 
 
 '''DQN settings'''
@@ -28,7 +28,7 @@ print('USE GPU: '+str(USE_GPU))
 # mini-batch size
 BATCH_SIZE = 64
 # learning rage
-LR = 2e-4
+LR = 3e-4
 # the number of actions 
 N_ACTIONS = 9
 # the dimension of states
@@ -141,10 +141,10 @@ class DQN(object):
             action = np.random.randint(0, N_ACTIONS, (image.size(0)))
         return action
 
-    def store_transition(self, s, a, r, s_, done):
+    def store_transition(self, s, a, r, s_, done, info):
         for i in range(len(s)):
             self.memory_counter += 1
-            self.replay_buffer.add(s[i], a[i], r[i], s_[i], float(done[i]))
+            self.replay_buffer.add(s[i], a[i], r[i], s_[i], float(done[i]), info)
 
     def learn(self):
         self.learn_step_counter += 1
@@ -152,7 +152,7 @@ class DQN(object):
         if self.learn_step_counter % TARGET_REPLACE_ITER == 0:
             self.update_target(self.target_net, self.pred_net, 1e-2)
     
-        b_i, b_s, b_a, b_r, b_i_, b_s_, b_d = self.replay_buffer.sample(BATCH_SIZE)
+        b_i, b_s, b_a, b_r, b_i_, b_s_, b_d, infos = self.replay_buffer.sample(BATCH_SIZE)
         # b_w, b_idxes = np.ones_like(b_r), None
         
         b_i = torch.FloatTensor(b_i)    
