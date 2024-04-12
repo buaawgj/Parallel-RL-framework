@@ -55,10 +55,8 @@ MAX_ACTION = 2
 LEARN_START = int(1.5e+3)
 # simulator steps for learning interval
 LEARN_FREQ = 4
-# epsilon-greedy
-EPSILON = 1.0
 # the length pf each episode
-EPISODE_LENGTH = 250
+EPISODE_LENGTH = 200
 
 ###########   Save&Load Settings   ############
 # check save/load
@@ -106,7 +104,7 @@ else:
     print("Undefined algorithm")
     raise
 
-def anneal_epsilon():
+def anneal_epsilon(step):
     # annealing the epsilon(exploration strategy)
     if step <= int(1e+5 // N_ENVS):
         # linear annealing to 0.9 until million step
@@ -117,6 +115,9 @@ def anneal_epsilon():
         EPSILON -= 0.099 / 1.5e+5 * N_ENVS
 
 def main():
+    # epsilon-greedy
+    EPSILON = 0.6
+    
     # create envs
     env = SubprocVecEnv([single_env for i in range(N_ENVS)])
 
@@ -151,7 +152,12 @@ def main():
         # When loading data from a file, don't need to sample from env.
         if args.algo == 'dqn':
             # annealing the epsilon(exploration strategy)
-            anneal_epsilon()
+            if step <= int(1e+5 // N_ENVS):
+                # linear annealing to 0.9 until million step
+                EPSILON -= 0.5 / 1e+5 * N_ENVS
+            elif step <= int(3e+5 // N_ENVS) and step > 1.5e+5:
+                EPSILON -= 0.099 / 1.5e+5 * N_ENVS
+                
             a = algo.choose_action(s, EPSILON)
         elif args.algo == 'ddpg':
             a = algo.choose_action(s, explore=explore)
