@@ -27,7 +27,7 @@ pip3 install pytorch pygame gym opencv_python
 
 Enter the DQN directory, and run the python3 command 'python3 train.py --algo ddpg(dqn)':
 ```
-cd DQN-pytorch # 
+cd Parallel-RL-framework # 
 python3 train.py --algo ddpg(dqn)
 ```
 
